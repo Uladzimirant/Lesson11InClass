@@ -20,8 +20,7 @@ namespace Lesson11InClass
         {
             Console.WriteLine(_name + " recieved " + sender);
             Thread.Sleep(100);
-            PingPongEvent?.Invoke(this, amount + 1);
-            if (amount < 100) (sender as PingPongPlayer)?.PingPongEvent?.Invoke(this, amount + 1);
+            if (amount < 100) PingPongEvent?.Invoke(this, amount + 1);
         }
 
         public void RegisterWith(PingPongPlayer p)
